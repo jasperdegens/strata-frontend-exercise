@@ -14,13 +14,18 @@ This exercise is a simple task where you can show us your proficiency in our env
 
 ## The Exercise
 
-Imagine we are building a competition for our users where we have a leaderboard and can view each users profiles. A visitor to the website can also like a user's profile. Your task is to complete the frontend code for two pages for a mock competition website. The two pages are outlines as the following:
+Imagine we are building a competition for our users where we have a leaderboard and can view each users profiles. A visitor to the website can also like a user's profile, which will only be recorded for the current website visit. Your task is to complete the frontend code for two pages for a mock competition website. The two pages are outlines as the following:
 
 **1. Leaderboard:**
 - The leaderboard shows a list or grid view of the current user rankings.
 
 **2. User Profile:**
 - A user profile page will show the profile picture of a user and their user name.
+
+### Provided to you:
+There are several resources provided to you:
+- Most importantly, there is an API to get the current leaderborad. You can query it at: `api/leaderboard`. You can view how it works and it's type signatures at `pages/api/leaderboard/index.tsx`. It will return a new leaderboard order each time it is called.
+- The empty files for you to fill in at `pages/leaderboard/index.tsx` and `pages/user/[username].tsx`
 
 ---
 
@@ -36,8 +41,6 @@ Imagine we are building a competition for our users where we have a leaderboard 
 - There should be a back button to return to the leaderboard.
 
 **NOTES**:
-- There is a mock api that sends back the leaderboard rankings each time it is called. You can query that api at:
-> `/api/leaderboard`
 - User profile images are located in the public resource folder at `users/[username].png`.
 - "Likes" do not have to persist beyond a local session (i.e. no need to save in any database. Can just use react state management)
 
