@@ -29,7 +29,7 @@ export default function handler(
     return {
       // trim extensions from filenames
       username: imgPath.replace(/\.[^/.]+$/, ""),
-      profileImage: `/leaderboard/${imgPath}`
+      profileImage: `/users/${imgPath}`
     }
   })
 
