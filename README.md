@@ -1,34 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Strata Frontend Dev Exercise
 
-## Getting Started
+First off we would like to thank you for your interest in joining the strata team! We are excited to have you apply and as part of the application process we have this small exercise to assess if you are a good fit for the team.
 
-First, run the development server:
+As a strata frontend dev, you will mainly be working with the following tech stack:
+  - Typescript
+  - Nextjs / React
+  - Tailwindcss
+  - Vercel
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+This exercise is a simple task where you can show us your proficiency in our environment. We are looking for well typed code, good state management, and familiarity with react best practices (hooks, memoized calls, etc). It should take around 2-3 hours to complete.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## The Exercise
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Imagine we are building a competition for our users where we have a leaderboard and can view each users profiles. A visitor to the website can also like a user's profile. Your task is to complete the frontend code for two pages for a mock competition website. The two pages are outlines as the following:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+**1. Leaderboard:**
+- The leaderboard shows a list or grid view of the current user rankings.
 
-## Learn More
+**2. User Profile:**
+- A user profile page will show the profile picture of a user and their user name.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Requirements
+**Leaderboard**:
+- This page should request the latest leaderboard rankings around every 20 seconds and update the leaderboard list.
+- Each leaderboard entry should display the user's profile picture and username.
+- Each leaderboard entry should show if we have liked the user's profile or not.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**User Profile**
+- This page should show the user's name and profile picture.
+- It should have a button/icon that allows a visitor to "like" the user's profile.
+- There should be a back button to return to the leaderboard.
 
-## Deploy on Vercel
+**NOTES**:
+- There is a mock api that sends back the leaderboard rankings each time it is called. You can query that api at:
+> `/api/leaderboard`
+- User profile images are located in the public resource folder at `users/[username].png`.
+- "Likes" do not have to persist beyond a local session (i.e. no need to save in any database. Can just use react state management)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Project Installation, Setup, Submission
+1. Create a fork of this repo.
+2. Install dependencies with
+>`yarn install`
+
+or
+>`npm install`
+
+3. Complete `pages/leaderboard/index.tsx` and `pages/user/[username].tsx` pages. 
+4. Create pull request
+5. Notify strata team!
+
+Feel free to contract us with any questions you have at `jobs@strata.gallery`
