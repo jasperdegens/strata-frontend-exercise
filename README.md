@@ -35,7 +35,7 @@ There are several resources provided to you:
   - `api/profile/{id}` - returns the user's profile with extended data.
     You can view how it works and it's type signatures at `types.d.ts`.
 
-- The empty files for you to fill in at `pages/leaderboard/index.tsx` and `pages/user/[username].tsx`
+- The empty files for you to fill in at `pages/leaderboard/index.tsx` and `pages/profile/[username].tsx`
 
 ---
 
