@@ -77,13 +77,11 @@ There are some key aspects that we would like you to keep in mind:
 1. Create a fork of this repo.
 2. Install dependencies with
    > `yarn install`
-
-or
-
-> `npm install`
-
-3. Complete `pages/leaderboard/index.tsx` and `pages/user/[username].tsx` pages.
-4. Create pull request
-5. Notify strata team!
+   > or
+   > `npm install`
+3. Run local development server with `yarn dev`
+4. Complete `pages/leaderboard/index.tsx` and `pages/user/[username].tsx` pages.
+5. Create pull request
+6. Notify strata team!
 
 Feel free to contract us with any questions you have at `jobs@strata.gallery`
