@@ -98,7 +98,7 @@ There are some key aspects that we would like you to keep in mind:
    > `npm install`
 3. Run local development server with `yarn dev`, it will be available on `localhost:3000`
 4. Complete `pages/leaderboard/index.tsx` and `pages/user/[username].tsx` pages.
-5. Create pull request (and deploy to Vercel if you'd like)
-6. Notify strata team!
+5. Deploy to vercel.
+6. Send the strata team a link to the deployment and the forked repo so we can take a look! You can email us at `jobs@strata.gallery`
 
 Feel free to contract us with any questions you have at `jobs@strata.gallery`
