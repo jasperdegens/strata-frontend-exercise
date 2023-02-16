@@ -1,21 +1,32 @@
 # Strata Frontend Dev Exercise
 
-First off we would like to thank you for your interest in joining the strata team! We are excited to have you apply and as part of the application process we have this small exercise to assess if you are a good fit for the team.
+Hi there 👋
+
+First off, we'd like to thank you for your interest in joining the strata team! 
+We are excited to have you apply and as part of the application process we have this small exercise to assess if you are a good fit for the team.
 
 As a strata frontend dev, you will mainly be working with the following tech stack:
 
 - Typescript
-- Nextjs / React
-- Tailwindcss
+- Next.js / React
+- TailwindCSS
 - Vercel
 
-This exercise is a simple task where you can show us your proficiency in our environment. We are looking for well typed code, good state management, and familiarity with react best practices (hooks, memoized calls, etc). It should take around 2-3 hours to complete.
+This exercise is a simple task where you can show us your proficiency and style in our environment. 
+We are looking for well typed code, good state management, separation of concerns, and familiarity with React best practices (hooks, memoized calls, etc). 
+
+It should take around 2-4 hours to complete.
 
 ---
 
 ## The Exercise
 
-Imagine we are building a competition for our users where we have a leaderboard and can view each users profiles. A visitor to the website can also like a user's profile, which will only be recorded for the current website visit. Your task is to complete the frontend code for two pages for a mock competition website. The two pages are outlines as the following:
+Imagine we are building a competition for our users where we have a leaderboard and can view each users profiles. 
+A visitor to the website can also like a user's profile, which will only be recorded for the current website visit. 
+
+Your task is to complete the frontend code for two pages for a mock competition website. 
+
+The two pages are outlines as the following:
 
 **1. Leaderboard:**
 
@@ -25,6 +36,7 @@ Imagine we are building a competition for our users where we have a leaderboard 
 
 - A user profile page will show the profile picture of a user and their user name.
 
+
 ### Provided to you:
 
 There are several resources provided to you:
@@ -33,9 +45,11 @@ There are several resources provided to you:
 
   - `api/leaderboard` - returns a new leaderboard order each time it is called.
   - `api/profile/{id}` - returns the user's profile with extended data.
-    You can view how it works and it's type signatures at `types.d.ts`.
+    You can view how it works in the `pages/api` folder and it's type signatures at `types.d.ts`.
 
 - The empty files for you to fill in at `pages/leaderboard/index.tsx` and `pages/profile/[username].tsx`
+
+Routing and API access are mapped automatically to routes using Next.js's routes and API routes
 
 ---
 
@@ -53,18 +67,21 @@ There are some key aspects that we would like you to keep in mind:
 
 ## Requirements
 
-**Leaderboard**:
+**Leaderboard page**:
 
 - This page should request the latest leaderboard rankings around every 20 seconds and update the leaderboard list.
 - Each leaderboard entry should display the user's profile picture and username.
 - Each leaderboard entry should show if we have liked the user's profile or not.
 
-**User Profile**
+**User Profile page**:
 
 - This page should show the user's name and profile picture.
 - It should have a button/icon that allows a visitor to "like" the user's profile.
 - There should be a back button to return to the leaderboard.
 
+**General requirements**:
+- Page designs should be responsive and work well on both desktop and mobile browsers.
+- You may deploy the page using a free Vercel account and share the preview URL with us.
 - You may add any additional functionality and pages you see fit if you complete the main assignment.
 
 **NOTES**:
@@ -79,9 +96,9 @@ There are some key aspects that we would like you to keep in mind:
    > `yarn install`
    > or
    > `npm install`
-3. Run local development server with `yarn dev`
+3. Run local development server with `yarn dev`, it will be available on `localhost:3000`
 4. Complete `pages/leaderboard/index.tsx` and `pages/user/[username].tsx` pages.
-5. Create pull request
+5. Create pull request (and deploy to Vercel if you'd like)
 6. Notify strata team!
 
 Feel free to contract us with any questions you have at `jobs@strata.gallery`
