@@ -29,6 +29,17 @@ There are several resources provided to you:
 
 ---
 
+## Key Considerations
+
+While there are many ways to complete this task, we hope to learn how you approach such problems within a larger codebase and in a collaborative enviornment.
+
+There are some key aspects that we would like you to keep in mind:
+- Code should be clean, readable and type-safe.
+- Separation of concerns between views and models, and reusable model code that leverages modern React.
+- Reusable view code and React component composition using data-bound components in the right places.
+
+---
+
 ## Requirements
 **Leaderboard**:
 - This page should request the latest leaderboard rankings around every 20 seconds and update the leaderboard list.
@@ -39,6 +50,8 @@ There are several resources provided to you:
 - This page should show the user's name and profile picture.
 - It should have a button/icon that allows a visitor to "like" the user's profile.
 - There should be a back button to return to the leaderboard.
+
+- You may add any additional functionality and pages you see fit if you complete the main assignment.
 
 **NOTES**:
 - User profile images are located in the public resource folder at `users/[username].png`.
