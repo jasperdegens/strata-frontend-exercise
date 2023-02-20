@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { GetStaticProps } from "next"
+import { GetStaticProps, GetStaticPaths } from "next"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -9,10 +9,10 @@ const Leaderboard: FC<LeaderboardData> = ({leaderboard}) => {
 
 
   return (<>
-    <div className="w-full h-80 flex flex-col items-center justify-center space-y-12">
+    <div className="">
       <h1 className="text-4xl font-bold">Leaderboard</h1>
       {leaderboard.map((item : UserDetails, index: number) => (
-      <Link href={`/leaderboard`} key={item.username}>
+      <Link href={`/profile/${item.username}`} key={item.username}>
         <div>
           <Image
             src={item.profileImage}
