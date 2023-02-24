@@ -17,7 +17,6 @@ const Leaderboard: FC = () => {
   const { loading, error, data, runApi } = useAsync();
 
   useEffect(() => {
-    console.log(process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID);
     runApi("/api/leaderboard");
     const intervalId = setInterval(() => {
       runApi("/api/leaderboard");
