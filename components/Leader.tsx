@@ -37,6 +37,9 @@ export const Leader = ({ leader }: LeaderProps) => {
         <h5 className='text-xl font-medium text-gray-900 mt-3'>
           {leader.username}
         </h5>
+        <p>
+          Score <span className='text-blue-800'>{leader.score}</span>
+        </p>
       </div>
     </Link>
   );

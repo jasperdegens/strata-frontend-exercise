@@ -22,9 +22,11 @@ const Leaderboard = ({ leaders }: LeaderboardProps) => {
         <>
           {leaders ? (
             <>
-              {leaders.map((leader: UserDetails) => (
-                <Leader key={leader.username} leader={leader} />
-              ))}
+              {leaders
+                .sort((a, b) => b.score - a.score)
+                .map((leader: UserDetails) => (
+                  <Leader key={leader.username} leader={leader} />
+                ))}
             </>
           ) : (
             <p>Something went wrong with loading the leaders</p>
