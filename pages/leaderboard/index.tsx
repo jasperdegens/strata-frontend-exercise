@@ -19,6 +19,7 @@ const Leaderboard = ({ leaders }: LeaderboardProps) => {
   return (
     <div className='w-full h-80 flex flex-row flex-wrap items-center justify-center text-gray-900'>
       {hydration &&
+        leaders &&
         leaders.map((leader: UserDetails) => (
           <Leader key={leader.username} leader={leader} />
         ))}
@@ -36,7 +37,7 @@ const getLeaderboardUsers = async () => {
   return response.json();
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const leaderboard: LeaderboardData = await getLeaderboardUsers();
   const leaders = leaderboard?.leaderboard;
 

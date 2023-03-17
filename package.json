@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^6.5.1",
     "lorem-ipsum": "^2.0.8",
     "next": "13.1.6",
     "random-profile-generator": "^2.3.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "zustand": "^4.3.6"
   },
   "devDependencies": {
     "@headlessui/react": "^1.7.11",
