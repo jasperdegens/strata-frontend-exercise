@@ -28,7 +28,7 @@ const User = () => {
   }, [username, fetchUser]);
 
   return (
-    <div className='w-full h-80 flex flex-col items-center justify-center space-y-12 text-gray-900'>
+    <div className='w-full flex flex-col items-center justify-center space-y-12 text-gray-900'>
       {user ? (
         <>
           <BackButton path='/leaderboard' />

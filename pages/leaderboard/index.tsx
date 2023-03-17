@@ -14,7 +14,7 @@ const Leaderboard = ({ leaders }: LeaderboardProps) => {
   }, []);
 
   return (
-    <div className='w-full h-80 flex flex-row flex-wrap items-center justify-center text-gray-900'>
+    <div className='w-full flex flex-row flex-wrap items-center justify-center text-gray-900'>
       {hydration && (
         <>
           {leaders ? (
