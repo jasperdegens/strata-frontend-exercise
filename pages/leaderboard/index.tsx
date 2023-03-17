@@ -1,5 +1,3 @@
-'use client';
-
 import { LeaderboardData, UserDetails } from '../../types';
 import { Leader } from '../../components/Leader';
 import { useEffect, useState } from 'react';
@@ -49,7 +47,7 @@ const getLeaderboardUsers = async () => {
   return response.json();
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const leaderboard: LeaderboardData = await getLeaderboardUsers();
   const leaders = leaderboard?.leaderboard;
 
