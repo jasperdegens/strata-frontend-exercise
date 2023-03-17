@@ -4,13 +4,16 @@ import Image from 'next/image';
 
 import { UserDetails } from '../types';
 import { useUserStore } from '../store/store';
+import { UserStoreInterface } from '../store/store';
 
 interface LeaderProps {
   leader: UserDetails;
 }
 
 export const Leader = ({ leader }: LeaderProps) => {
-  const likedUsers = useUserStore((state) => state.likedUsers);
+  const likedUsers = useUserStore(
+    (state: UserStoreInterface) => state.likedUsers
+  );
   const isLiked = likedUsers.find((likedUser) => likedUser === leader.username);
 
   return (

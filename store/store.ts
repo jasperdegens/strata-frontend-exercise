@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist, devtools } from 'zustand/middleware';
 
-interface UserStoreInterface {
+export interface UserStoreInterface {
   likedUsers: string[];
   likeUser: (username: string) => void;
   dislikeUser: (username: string) => void;
