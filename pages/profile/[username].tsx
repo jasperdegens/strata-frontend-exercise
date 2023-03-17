@@ -1,18 +1,43 @@
-import { FC } from "react"
+'use client';
 
+import { ProfileData } from '../../types';
+import { useRouter } from 'next/router';
+import { useCallback, useEffect, useState } from 'react';
+import { UserProfile } from '../../components/UserProfile';
 
+import { BackButton } from '../../components/BackButton';
+import { Spinner } from '../../components/Spinner';
 
-const User: FC = () => {
+const User = () => {
+  const [user, setUser] = useState<ProfileData | null>(null);
 
+  const router = useRouter();
+  const { username } = router.query;
 
-  return (<>
-    <div className="w-full h-80 flex flex-col items-center justify-center space-y-12">
-      <h1 className="text-4xl font-bold">User</h1>
-      <p>TODO: complete</p>
+  const fetchUser = useCallback(async () => {
+    const response = await fetch(`/api/profile/${username}`);
+    const user = await response.json();
+    setUser(user);
+  }, [username]);
+
+  useEffect(() => {
+    if (username) {
+      fetchUser();
+    }
+  }, [username, fetchUser]);
+
+  return (
+    <div className='w-full h-80 flex flex-col items-center justify-center space-y-12 text-gray-900'>
+      {user ? (
+        <>
+          <BackButton path='/leaderboard' />
+          <UserProfile user={user} />
+        </>
+      ) : (
+        <Spinner />
+      )}
     </div>
-  </>)
+  );
+};
 
-}
-
-
-export default User
+export default User;
