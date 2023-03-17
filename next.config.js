@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+  },
   images: {
     dangerouslyAllowSVG: true,
     domains: ['tailwindui.com'],

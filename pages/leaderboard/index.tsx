@@ -2,7 +2,6 @@
 
 import { LeaderboardData, UserDetails } from '../../types';
 import { Leader } from '../../components/Leader';
-import { checkEnvironment } from '../../helpers/checkEnvironment';
 import { useEffect, useState } from 'react';
 
 interface LeaderboardProps {
@@ -38,9 +37,12 @@ const Leaderboard = ({ leaders }: LeaderboardProps) => {
 };
 
 const getLeaderboardUsers = async () => {
-  const response = await fetch(checkEnvironment().concat('/api/leaderboard'), {
-    next: { revalidate: 20 },
-  });
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/leaderboard`,
+    {
+      next: { revalidate: 20 },
+    }
+  );
   if (!response.ok) {
     throw new Error('Failed to fetch');
   }
