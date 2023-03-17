@@ -35,19 +35,17 @@ const Leaderboard = ({ leaders }: LeaderboardProps) => {
 };
 
 const getLeaderboardUsers = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/leaderboard`,
-    {
-      next: { revalidate: 20 },
-    }
-  );
+  const URL_STRING = `${process.env.NEXT_PUBLIC_API_URL}/api/leaderboard`;
+  const response = await fetch(URL_STRING, {
+    next: { revalidate: 20 },
+  });
   if (!response.ok) {
     throw new Error('Failed to fetch');
   }
   return response.json();
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const leaderboard: LeaderboardData = await getLeaderboardUsers();
   const leaders = leaderboard?.leaderboard;
 

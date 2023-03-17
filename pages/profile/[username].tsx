@@ -16,7 +16,6 @@ const User = () => {
 
   const fetchUser = useCallback(async () => {
     const URL_STRING = `${process.env.NEXT_PUBLIC_API_URL}/api/profile/${username}`;
-    console.log(URL_STRING);
     const response = await fetch(URL_STRING);
     const user = await response.json();
     setUser(user);
