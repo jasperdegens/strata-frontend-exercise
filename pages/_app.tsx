@@ -12,7 +12,7 @@ import Navbar from '../components/navbar'
 
 // Utils
 import MainContext from '../utils/contexts/MainContext'
-import { useFetch } from '../utils/hooks/useFetch'
+import { useFetchLeaderboard } from '../utils/hooks/useFetchLeaderboard'
 import { API_LEADERBOARD_URL } from '../utils/constants/constants'
 
 // Types
@@ -26,7 +26,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   const [allUsers, setAllUsers] = useState<UserDetails[]>([])
 
   // API handling
-  const { data, loading, error } = useFetch(API_LEADERBOARD_URL)
+  const { data, loading, error } = useFetchLeaderboard(API_LEADERBOARD_URL)
 
   useEffect(() => {
     if (allUsers.length === 0) {

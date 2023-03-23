@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export const useFetch = (url: RequestInfo | URL) => {
+export const useFetchLeaderboard = (url: RequestInfo | URL) => {
   const [data, setData] = useState({ leaderboard: [] })
   const [error, setError] = useState<unknown>(null)
   const [loading, setLoading] = useState(false)
