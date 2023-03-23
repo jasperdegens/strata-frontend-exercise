@@ -9,9 +9,18 @@ import UserCard from '../../components/UserCard'
 
 // Utils
 import MainContext from '../../utils/contexts/MainContext'
+import {
+  API_LEADERBOARD_URL,
+  INTERVAL_VALUE,
+} from '../../utils/constants/constants'
+
+// Hooks
+import { useLeaderboardInterval } from '../../utils/hooks/useLeaderboardInterval'
 
 const Leaderboard: FC = () => {
   const { allUsers } = useContext(MainContext)
+
+  useLeaderboardInterval(API_LEADERBOARD_URL, INTERVAL_VALUE)
 
   return (
     <>
