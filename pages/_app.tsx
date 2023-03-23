@@ -1,13 +1,42 @@
-import Navbar from '../components/navbar'
-import '../styles/globals.css'
+// React
+import { useState, useEffect } from 'react'
+
+// Next
 import type { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
+// CSS
+import '../styles/globals.css'
+
+// Components
+import Navbar from '../components/navbar'
+
+// Utils
+import MainContext from '../utils/contexts/MainContext'
+
+// Types
+import { UserDetails } from '../types'
+
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  const [selectedUser, setSelectedUser] = useState<UserDetails>(
+    {} as UserDetails
+  )
+  const [allUsers, setAllUsers] = useState<UserDetails[]>([])
+
   return (
-  <div className='bg-white min-h-screen'>
-    <Navbar />
-    <Component {...pageProps} />
-  </div>)
+    <MainContext.Provider
+      value={{
+        selectedUser,
+        setSelectedUser,
+        allUsers,
+        setAllUsers,
+      }}
+    >
+      <div className="bg-white min-h-screen">
+        <Navbar />
+        <Component {...pageProps} />
+      </div>
+    </MainContext.Provider>
+  )
 }
 
 export default MyApp
