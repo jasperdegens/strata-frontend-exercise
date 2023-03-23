@@ -12,15 +12,27 @@ import Navbar from '../components/navbar'
 
 // Utils
 import MainContext from '../utils/contexts/MainContext'
+import { useFetch } from '../utils/hooks/useFetch'
+import { API_LEADERBOARD_URL } from '../utils/constants/constants'
 
 // Types
 import { UserDetails } from '../types'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  // States
   const [selectedUser, setSelectedUser] = useState<UserDetails>(
     {} as UserDetails
   )
   const [allUsers, setAllUsers] = useState<UserDetails[]>([])
+
+  // API handling
+  const { data, loading, error } = useFetch(API_LEADERBOARD_URL)
+
+  useEffect(() => {
+    if (allUsers.length === 0) {
+      setAllUsers(data.leaderboard)
+    }
+  }, [allUsers.length, data])
 
   return (
     <MainContext.Provider
