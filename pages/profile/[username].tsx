@@ -14,6 +14,7 @@ import { ProfileData } from '../../types'
 
 // Components
 import Spinner from '../../components/Spinner'
+import HeartIcon from '../../components/HeartIcon'
 
 const User: FC = () => {
   // Router
@@ -55,6 +56,7 @@ const User: FC = () => {
                 <h5 className="mb-1 text-xl font-medium">
                   {selectedUser.username}
                 </h5>
+                <HeartIcon color={selectedUser.favorite ? 'red' : 'gray'} />
               </div>
               <span className="text-sm text-gray-500">
                 Twitter: {userProfile.twitter}

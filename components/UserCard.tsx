@@ -1,3 +1,4 @@
+// React
 import { FC, useState, useContext } from 'react'
 
 // Next
@@ -13,6 +14,7 @@ import MainContext from '../utils/contexts/MainContext'
 
 // Components
 import Spinner from '../components/Spinner'
+import HeartIcon from '../components/HeartIcon'
 
 // Interfaces
 interface UserCardProps {
@@ -54,6 +56,7 @@ const UserCard: FC<UserCardProps> = ({ user }) => {
           </div>
           <div className="flex items-center space-x-1 text-sm text-gray-400 pointer-events-none">
             <p>Score: {user.score}</p>
+            <HeartIcon color={user.favorite ? 'red' : 'gray'} />
           </div>
         </div>
       </li>

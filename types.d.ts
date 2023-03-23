@@ -2,6 +2,7 @@ export interface UserDetails {
   username: string
   profileImage: string
   score: number
+  favorite: boolean
 }
 
 export type LeaderboardData = {

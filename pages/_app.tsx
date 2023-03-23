@@ -30,7 +30,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   useEffect(() => {
     if (allUsers.length === 0) {
-      setAllUsers(data.leaderboard)
+      const updatedUsers = data.leaderboard.map((user: UserDetails) => {
+        return { ...user, favorite: false }
+      })
+      const sortedUpdatedUsers = updatedUsers.sort(
+        (a: { score: number }, b: { score: number }) => b.score - a.score
+      )
+      setAllUsers(sortedUpdatedUsers)
     }
   }, [allUsers.length, data])
 
