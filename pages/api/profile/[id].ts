@@ -1,6 +1,9 @@
-import { LoremIpsum } from "lorem-ipsum";
-import { NextApiRequest, NextApiResponse } from "next";
-var randomProfile = require("random-profile-generator");
+import { LoremIpsum } from 'lorem-ipsum'
+import { NextApiRequest, NextApiResponse } from 'next'
+var randomProfile = require('random-profile-generator')
+
+// Types
+import { ProfileData } from '../../../types'
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
@@ -11,15 +14,15 @@ const lorem = new LoremIpsum({
     max: 16,
     min: 4,
   },
-});
+})
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProfileData>
 ) {
-  const username = req.query.id as string;
-  const { age, twitter, email, birthday } = randomProfile.profile();
-  const bio = lorem.generateParagraphs(1);
+  const username = req.query.id as string
+  const { age, twitter, email, birthday } = randomProfile.profile()
+  const bio = lorem.generateParagraphs(1)
 
   const profileData: ProfileData = {
     username,
@@ -28,7 +31,7 @@ export default function handler(
     twitter,
     email,
     birthday,
-  };
+  }
 
-  res.status(200).json(profileData);
+  res.status(200).json(profileData)
 }
