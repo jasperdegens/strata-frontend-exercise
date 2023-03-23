@@ -23,10 +23,19 @@ const User: FC = () => {
   const usernameFromQuery = router.query.username
 
   // Context
-  const { selectedUser } = useContext(MainContext)
+  const { allUsers, selectedUser, setSelectedUser } = useContext(MainContext)
 
   // States
   const [userProfile, setUserProfile] = useState({} as ProfileData)
+
+  useEffect(() => {
+    if (!selectedUser.username) {
+      const newSeletedUser = allUsers.find(
+        (user) => user.username == usernameFromQuery
+      )
+      newSeletedUser && setSelectedUser(newSeletedUser)
+    }
+  }, [allUsers, selectedUser.username, setSelectedUser, usernameFromQuery])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,11 +46,11 @@ const User: FC = () => {
     }
 
     fetchData()
-  }, [usernameFromQuery])
+  }, [selectedUser, usernameFromQuery])
 
   return (
     <>
-      {userProfile.username ? (
+      {userProfile.username && selectedUser.username ? (
         <div className="w-full h-80 flex flex-col items-center justify-center space-y-12 text-black">
           <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
             <div className="flex flex-col items-center pb-10 pt-10">
