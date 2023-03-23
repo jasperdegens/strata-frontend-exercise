@@ -52,7 +52,7 @@ const UserCard: FC<UserCardProps> = ({ user }) => {
           />
           <div className="flex-1 mx-1 text-lg font-normal truncate flex flex-row items-center">
             <p className="mr-3">{user.username}</p>
-            {showSpinner && <Spinner />}
+            {showSpinner && <Spinner width="20" />}
           </div>
           <div className="flex items-center space-x-1 text-sm text-gray-400 pointer-events-none">
             <p>Score: {user.score}</p>

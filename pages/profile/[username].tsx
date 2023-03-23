@@ -50,8 +50,8 @@ const User: FC = () => {
 
   return (
     <>
-      {userProfile.username && selectedUser.username ? (
-        <div className="w-full h-80 flex flex-col items-center justify-center space-y-12 text-black">
+      <div className="w-full h-80 flex flex-col items-center justify-center space-y-12 text-black">
+        {userProfile.username && selectedUser.username ? (
           <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
             <div className="flex flex-col items-center pb-10 pt-10">
               <Image
@@ -79,10 +79,10 @@ const User: FC = () => {
               </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <Spinner />
-      )}
+        ) : (
+          <Spinner width="50" />
+        )}
+      </div>
     </>
   )
 }
